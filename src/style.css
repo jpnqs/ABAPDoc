@@ -114,6 +114,9 @@ button:active {
   margin-right: 22px;
   margin-top: 10px;
     float:right;
+      position: absolute;
+    top: 0px;
+    right: 0px;
 }
 
 /* thead, tbody tr {
