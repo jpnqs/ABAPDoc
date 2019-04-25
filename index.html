@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ABAP Docs Generator</title>
+        <link rel="stylesheet" href="src/style.css">
+        <script src="src/main.js"></script>
+    </head>
+    <body>
+        <div id="snackbar">Some text some message..</div>
+        <div id="_Container">
+            <H2>Description:</H2>
+            <input id="_Description" placeholder="Description...">
+            <br><br>
+            <label class="container">Synchronize Shorttext
+                <input type="checkbox" checked="checked" onchange="checkboxChange(this)">
+                <span class="checkmark"></span>
+            </label>
+            <H2>Parameters:</H2>
+            <table id="_Parameters">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <!-- <th>Datatype</th> -->
+                        <th>Shorttext</th>
+                        <th><button class="add" onclick="addParameterRow()">+</button></th>
+                    </tr>
+                </thead>
+                <tbody id="_ParametersBody">
+
+                </tbody>
+            </table>
+            <button id="_Generate" onclick="generate()">GENERATE</button>
+            <br><br><br>
+            <textarea id="_Output"></textarea>
+        </div>
+    </body>
+</html>
