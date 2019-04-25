@@ -1,4 +1,4 @@
-var tableRow = '<tr><td> <select><option value="@parameter" default>@parameter</option><option value="@raising">@raising</option> </select></td><td><input placeholder="Name..."></td><td><input placeholder="Shorttext..."></td><td><button class="remove" onclick="removeParameterRow(this)">-</button></td></tr>';
+var tableRow = '<tr><td> <select><option value="@parameter" default>@parameter</option><option value="@raising">@raising</option><option value="@exception">@exception</option> </select></td><td><input placeholder="Name..."></td><td><input placeholder="Shorttext..."></td><td><button class="remove" onclick="removeParameterRow(this)">-</button></td></tr>';
 
 var syncShorttext = true;
 
