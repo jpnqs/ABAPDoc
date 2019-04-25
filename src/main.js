@@ -1,4 +1,4 @@
-var tableRow = '<tr><td> <select><option value="@parameter" default>@parameter</option><option value="@raising">@raising</option><option value="@exception">@exception</option> </select></td><td><input placeholder="Name..."></td><td><input placeholder="Shorttext..."></td><td><button class="remove" onclick="removeParameterRow(this)">-</button></td></tr>';
+var tableRow = '<td> <select><option value="@parameter" default>@parameter</option><option value="@raising">@raising</option><option value="@exception">@exception</option> </select></td><td><input placeholder="Name..."></td><td><input placeholder="Shorttext..."></td><td><button class="remove" onclick="removeParameterRow(this)">-</button></td>';
 
 var syncShorttext = true;
 
@@ -9,7 +9,9 @@ function createElementFromHTML(htmlString) {
 }
 
 function addParameterRow () {
-    document.getElementById("_ParametersBody").innerHTML += tableRow;
+    var tr = document.createElement("tr");
+    tr.innerHTML = tableRow;
+    document.getElementById("_ParametersBody").appendChild(tr);
     showSnackbar("Added row");
 }
 
