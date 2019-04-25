@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* Hiermit können Safari >=1.1, Opera >=9.5, IE9 was anfangen*/
+::selection {
+  background: #4286f4;
+  color: #fff;
+}
+/* und hiermit der Firefox >=1 */
+::-moz-selection {
+  background: #4286f4;
+  color: #fff;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    font-family: "Roboto" !important;
+}
+
+input {
+    font-family: "Roboto";
+    font-size: 16pt;
+    padding: 10px;
+    width: calc(100% - 25px);
+
+    border-width: 1px;
+    border-color: silver;
+    border-style: solid;
+    border-radius: 2px;
+}
+
+h2 {
+  margin-left: 10px;
+}
+
+#_Description {
+  margin-left: 10px;
+
+  width: calc(100% - 43px);
+}
+
+select {
+  font-family: "Roboto";
+  font-size: 16pt;
+  width: 90%;
+  border: none;
+  height: 47px;
+  border-width: 1px;
+  border-color: silver;
+  border-style: solid;
+  border-radius: 2px;
+}
+
+#_Container {
+    margin: 10px;
+}
+
+.remove, .add {
+  float:right;
+  margin-right: 5px;
+
+  color: red;
+  font-size: 30pt;
+  padding: 0px;
+  background-color:rgba(0,0,0,0);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.add {
+  float:right;
+  margin-right: 5px;
+  color: green;
+  font-size: 30pt;
+  padding: 0px;
+  background-color:rgba(0,0,0,0);
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.remove:hover, .remove:focus, .add:hover, .add:focus {
+  background-color:#ebebeb;
+}
+
+.remove:active, .add:active {
+  background-color: rgba(210,210,210,1);
+}
+
+button {
+    font-family: "Roboto";
+    font-size: 16pt;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #4286f4;
+    border: none;
+    border-radius: 5px;
+    color:white;
+}
+
+button:hover {
+    background-color: #346bc3;
+}
+
+button:active {
+    background-color: #275092;
+}
+
+#_Generate {
+  margin-right: 22px;
+  margin-top: 10px;
+    float:right;
+}
+
+/* thead, tbody tr {
+  display:table;
+  width:100%;
+  table-layout:fixed;
+}
+*/ table {
+  text-align:middle;
+  margin-left: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  border-width: 1px;
+  border-color: lightgray;
+} /*
+tbody {
+  display:block;
+  height:500px;
+  overflow:auto;
+}
+*/
+thead {
+  display:block;
+  font-family: "Roboto";
+  font-size: 16pt;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+th, td {
+  background-color: #f0f0f0;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+tr {
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #f0f0f0;
+  font-size: 16pt;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+tr:hover {
+  background-color: #ebebeb;
+}
+
+td {
+  background-color: white;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+} 
+
+tbody {
+  display:block;
+  height:350px;
+  overflow:auto;
+  width: calc(100% - 22px);
+}
+thead, tbody tr {
+  display:table;
+  width:100%;
+  table-layout:auto;
+}
+thead {
+  width: calc( 100% - 1em )
+}
+table {
+  width:100%;
+}
+
+textarea {
+  width: calc( 100% - 10px );
+  display: none;
+}
+
+
+.container {
+  margin-left: 10px;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #4286f4;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+
+  #snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+  }
+  
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
