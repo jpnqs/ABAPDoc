@@ -17,6 +17,7 @@ html, body {
     padding: 0px;
     margin: 0px;
     overflow: hidden;
+    overflow-y: auto;
     font-family: "Roboto" !important;
 }
 
