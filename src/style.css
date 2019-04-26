@@ -91,6 +91,7 @@ select {
 }
 
 button {
+    cursor: pointer !important;
     font-family: "Roboto";
     font-size: 16pt;
     padding: 10px;
