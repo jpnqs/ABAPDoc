@@ -1,6 +1,10 @@
 var tableRow = '<td> <select><option value="@parameter" default>@parameter</option><option value="@raising">@raising</option><option value="@exception">@exception</option> </select></td><td><input placeholder="Name..."></td><td><input placeholder="Shorttext..."></td><td><button class="remove" onclick="removeParameterRow(this)">-</button></td>';
 
-var syncShorttext = true;
+var syncShorttext = null;
+
+window.onload = function () {
+ 	syncShorttext = document.getElementById("_SyncShorttext");
+}
 
 function createElementFromHTML(htmlString) {
     var div = document.createElement('div');
@@ -31,6 +35,42 @@ function showSnackbar (msg) {
 }
 
 function generate () {
+	
+	var writeParameter = function (type, name, shorttext, row) {
+
+		if (type.trim() == "" || name.trim() == "") {
+			throw "Input in row " + row + " has to be filled!";
+		}
+
+		var r = '"! ' + type + " " + name + ' | <p';
+		
+		if (syncShorttext.checked) {
+			r += ' class="shorttext synchronized"';
+		}
+
+		r += ">";
+
+		r += shorttext;
+
+		r += "</p>";
+		return r;
+	};
+	
+	var writeHeader = function () {
+		var val = document.getElementById("_Description").value;
+		if (val.trim() == "") {
+			throw "Description has to be filled";
+		}
+		var p = "\"! <p";
+		if (syncShorttext.checked) {
+			p += ' class="shorttext synchronized"';
+		}
+		p += ">";
+		p += val;
+		p += "</p>";
+		return p;
+	};
+	
     try {
         var out ;
         out = "";
@@ -54,43 +94,4 @@ function generate () {
     } catch (ex) {
         showSnackbar(ex);
     }
-}
-
-function writeParameter (type, name, shorttext, row) {
-
-    if (type.trim() == "" || name.trim() == "") {
-        throw "Input in row " + row + " has to be filled!";
-    }
-
-    var r = '"! ' + type + " " + name + ' | <p';
-    
-    if (syncShorttext) {
-        r += ' class="shorttext synchronized"';
-    }
-
-    r += ">";
-
-    r += shorttext;
-
-    r += "</p>";
-    return r;
-}
-
-function writeHeader () {
-    var val = document.getElementById("_Description").value;
-    if (val.trim() == "") {
-        throw "Description has to be filled";
-    }
-    var p = "\"! <p";
-    if (syncShorttext) {
-        p += ' class="shorttext synchronized"';
-    }
-    p += ">";
-    p += val;
-    p += "</p>";
-    return p;
-}
-
-function checkboxChange (el) {
-    syncShorttext = el.checked;
 }
